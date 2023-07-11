@@ -2,17 +2,17 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
 )
-from .models import Thing
+from .models import CookieStand
 from .permissions import IsOwnerOrReadOnly
-from .serializers import ThingSerializer
+from .serializers import CookieStandSerializer
 
 
-class ThingList(ListCreateAPIView):
-    queryset = Thing.objects.all()
-    serializer_class = ThingSerializer
+class CookieStandList(ListCreateAPIView):
+    queryset = CookieStand.objects.all()
+    serializer_class = CookieStandSerializer
 
 
-class ThingDetail(RetrieveUpdateDestroyAPIView):
+class CookieStandDetail(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
-    queryset = Thing.objects.all()
-    serializer_class = ThingSerializer
+    queryset = CookieStand.objects.all()
+    serializer_class = CookieStandSerializer
